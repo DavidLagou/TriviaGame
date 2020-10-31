@@ -1,4 +1,3 @@
-
 // global variables to be used within the app
 var questionPoolArray = [];
 var currScore;
@@ -24,10 +23,6 @@ var nextQuestion = document.getElementById('nextQuestion');
 var nextQContainer = document.querySelector('.nextQuestionContainer')
 nextQuestion.addEventListener('click', nextQues);
 
-
-
-
-
 // When the user presses startgame button .. this function runs 
 function run() {
     var catIndex = document.getElementById('catIndex').value;
@@ -41,8 +36,6 @@ function run() {
     document.querySelector('.question_container').style.display = "block";
     // Removing the start screen 
     document.querySelector('.startContainer').style.display = "none";
-
-
 }
 function initNewGame(questions) {
     // This function will return an assosiative array with all the questions / answers as objects
@@ -59,17 +52,15 @@ function initNewGame(questions) {
     return questionPoolArray;
 }
 
+// Generating question 
 function displayQuestion(currQuestion) {
-    // Generating question 
     result.innerHTML = "";
     nextQContainer.style.display = 'none';
     displayq.innerHTML = questionPoolArray[currQuestion].question;
 }
 
-
 // checking to see if the users answer matchets the question in the associative array
 function checkAnswer(answer) {
-
     if (answer === questionPoolArray[currQuestion].correct_answer) {
         // correct answer 
         result.innerHTML = " CORRECT ! ";
@@ -77,7 +68,6 @@ function checkAnswer(answer) {
         document.getElementById('currScore').innerHTML = currScore;
         document.querySelector('.question_container').style.border = '2px solid blue';
         result.style.color = 'blue';
-
     } else {
         // Wrong answer 
         document.querySelector('.question_container').style.border = '2px solid red';
@@ -89,7 +79,6 @@ function checkAnswer(answer) {
     trueBtn.style.display = 'none';
     falseBtn.style.display = 'none';
     nextQContainer.style.display = 'block';
-
 
 }
 function nextQues() {
@@ -106,7 +95,6 @@ function nextQues() {
         displayFinalSscore();
     }
 }
-
 function displayFinalSscore() {
     // Generating the games final score and 
     var finalScore = (currScore / questionPoolArray.length) * 100;
@@ -118,6 +106,4 @@ function displayFinalSscore() {
     result.innerHTML = ""
     displayq.innerHTML = 'Game over !';
     nextQContainer.style.display = 'none';
-
-
 }
