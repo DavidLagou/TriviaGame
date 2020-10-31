@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Night Friday</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600;700&display=swap" rel="stylesheet">
+</head>
+</head>
+
+<body>
+
+    <div class="startContainer">
+        <h1> Trivia Night Fridays!</h1>
+        <p> Do you have what it takes to answer the worlds toughest questions ?</p>
+        <div class="triviaCat">
+            <p>  Please Select Your Trivia Category !</p>
+            <select name="trivia_category" id="catIndex">
+                <option value="9">General Knowledge</option>
+                <option value="15">Entertainment: Video Games</option>
+                <option value="17">Science &amp; Nature</option>
+                <option value="22">Geography</option>
+                <option value="23">History</option>
+                
+            </select>
+        </div>
+        <button id="button"> Start Quiz </button>
+    </div>
+
+    <div class="question_container">
+        <div class="question_header">
+            <p> <span id="currQuestion"> 1</span> / <span id="totalQuestions"> </span></p>
+            <p> Current score : <span id="currScore"> </span> </p>
+        </div>
+
+        <h1><span id="displayQ"> </span></h1>
+        <div class="finalScore">
+            <p> You scored : <span id="finalScore"> </span> % </p>
+            <button id="button2"> Play Again !</button>
+        </div>
+        <div class="answersContainer">
+            <button onclick='checkAnswer("True")' id="true"> True </button>
+            <button onclick='checkAnswer("False")' id="false"> False </button>
+        </div>
+
+        <p id="result"> </p>
+
+    </div>
+    <div class="nextQuestionContainer">
+        <button id="nextQuestion"> Next Question</button>
+    </div>
+
+    <footer> &copy David Lagou 2020</footer>
+
+
+    <script src="./script/gameData.js"></script>
+</body>
+
+</html>
